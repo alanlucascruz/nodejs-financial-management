@@ -11,7 +11,7 @@ const Transaction = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  type_transaction: {
+  type: {
     type: String,
     required: true,
   },
@@ -21,4 +21,4 @@ const Transaction = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Category", Category);
+module.exports = mongoose.model("Transaction", Transaction);
