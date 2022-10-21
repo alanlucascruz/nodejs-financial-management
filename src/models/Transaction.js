@@ -19,6 +19,10 @@ const Transaction = new mongoose.Schema({
     type: types.ObjectId,
     ref: "Category",
   },
+  user: {
+    type: types.ObjectId,
+    ref: "User",
+  },
 });
 
 module.exports = mongoose.model("Transaction", Transaction);
