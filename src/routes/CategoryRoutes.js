@@ -9,7 +9,7 @@ const {
 
 routes.get("/:user_id", index);
 routes.get("/find/:user_id/:filter", index);
-routes.get(":id", show);
+routes.get("/show/:id", show);
 routes.post("/", store);
 routes.put("/:id", update);
 routes.delete("/:id", destroy);

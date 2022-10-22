@@ -22,6 +22,7 @@ const Transaction = new mongoose.Schema({
   user: {
     type: types.ObjectId,
     ref: "User",
+    required: true,
   },
 });
 
