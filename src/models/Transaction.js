@@ -12,7 +12,7 @@ const Transaction = new mongoose.Schema({
     required: true,
   },
   type: {
-    type: String,
+    type: String, // buy or sale
     required: true,
   },
   category: {

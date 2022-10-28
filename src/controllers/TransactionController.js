@@ -2,12 +2,14 @@ const Transaction = require("../models/Transaction");
 
 const index = async (req, res) => {
   try {
-    // const { user_id: userId, filter } = req.params;
-    // const data = await Transaction.find({
-    //   user: userId,
-    //   name: new RegExp(filter, "i"),
-    // }).sort("name");
-    // res.json(data);
+    const { user_id: userId, filter } = req.params;
+
+    const data = await Transaction.find({
+      user: userId,
+      // name: new RegExp(filter, "i"),
+    }).sort("-date_transaction");
+
+    res.json(data);
   } catch (error) {
     res.status(400).json({ message: "Erro ao listar as categorias.", error });
   }
@@ -15,8 +17,9 @@ const index = async (req, res) => {
 
 const show = async (req, res) => {
   try {
-    // const data = await Category.findById(req.params.id);
-    // res.json(data);
+    const data = await Transaction.findById(req.params.id);
+
+    res.json(data);
   } catch (error) {
     res.status(400).json({ message: "Erro ao pesquisar a transação.", error });
   }
